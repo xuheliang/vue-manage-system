@@ -19,6 +19,7 @@ const i18n = new VueI18n({
 router.beforeEach((to,from,next) => {
   document.title = `${to.meta.title} | vue-manage-system`
   const role = localStorage.getItem('ms_username')
+  console.log(role)
   if(!role && to.path !== '/login') {
     next('/login')
   }else if(to.meta.permission) {
