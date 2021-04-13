@@ -8,8 +8,11 @@ import { message } from './components/common/i18n'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/scss/common.css'
 import '@/assets/scss/color-dark.css'
+import '@/assets/scss/icon.css'
 
-Vue.use(ElementUI)
+Vue.use(ElementUI,{
+  size: 'small'
+})
 Vue.use(VueI18n)
 const i18n = new VueI18n({
   locale: 'zh',

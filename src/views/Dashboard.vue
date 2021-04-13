@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :span="8">
         <el-card shadow="hover" class="mgb20" style="height: 252px;">
-          <div class="user-info">
+          <div class="userInfo">
             <img src="../assets/img/img.jpg" class="user-avator" alt="">
             <div class="user-info-cont">
               <div class="user-info-name">{{name}}</div>
@@ -14,7 +14,7 @@
             上次登陆时间:
             <span>2019-11-01</span>
           </div>
-          <div class="usr-info-list">
+          <div class="user-info-list">
             上次登录地点:
             <span>东莞</span>
           </div>
@@ -26,7 +26,7 @@
           <el-progress :percentage="71.3" color="#42b983"></el-progress>JavaScript
           <el-progress :percentage="24.1" color="#f1e05a"></el-progress>CSS
           <el-progress :percentage="13.7" ></el-progress>HTML
-          <el-progress></el-progress>
+          <el-progress :percentage="5.9" color='#f56c6c'></el-progress>
         </el-card>
       </el-col>
       <el-col :span="16">
@@ -70,7 +70,7 @@
             <span>待办事项</span>
             <el-button style="float: right;padding:3px 0" type="text">添加</el-button>
           </div>
-          <el-table :show-header="false" :data="todolist" style="width:100%">
+          <el-table :show-header="false" :data="todoList" style="width:100%">
             <el-table-column width="40">
               <template slot-scope="scope">
                 <el-checkbox v-model="scope.row.status"></el-checkbox>
@@ -79,7 +79,7 @@
             <el-table-column>
               <template slot-scope="scope">
                 <div class="todo-item" :class="{'todo-item-del': scope.row.status}">
-                  {scope.row.title}
+                  {{scope.row.title}}
                 </div>
               </template>
             </el-table-column>
@@ -99,7 +99,7 @@
           <schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>
         </el-card>
       </el-col>
-      <el-col :spam="12">
+      <el-col :span="12">
         <el-card shadow="hover">
           <schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
         </el-card>
@@ -263,7 +263,7 @@ export default {
   line-height: 100px;
   color: #fff
 }
-.gird-con-1 .grid-con-icon {
+.grid-con-1 .grid-con-icon {
   background: rgb(45, 140,240);
 }
 .grid-con-1 .grid-num {
@@ -329,7 +329,7 @@ export default {
 
 .schart {
   width: 100%;
-  height: 100%;
+  height: 300px;
 }
 
 </style>

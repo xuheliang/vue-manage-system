@@ -74,7 +74,7 @@ export default {
         },
         {
           icon: 'el-icon-lx-copy',
-          index: 'tab',
+          index: 'tabs',
           title: 'tab选项卡'
         },
         {
@@ -156,12 +156,11 @@ export default {
   },
   computed: {
     onRoutes() {
-      console.log(this.$route)
       return this.$route.path.replace('/','')
     }
   },
   created() {
-    bus.$on('colllapse',msg => {
+    bus.$on('collapse',msg => {
       this.collapse = msg
       bus.$emit('collapse-content',msg)
     })
@@ -169,7 +168,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .sidebar {
   display: block;
   position: absolute;

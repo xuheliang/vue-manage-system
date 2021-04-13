@@ -1,7 +1,7 @@
 <template>
   <div class="tags" v-if="showTags">
     <ul>
-      <li class="tags-li" v-for="(item,index) in tagList" :class="{active: isActive(item.path)}" :key=index>
+      <li class="tags-li" v-for="(item,index) in tagsList" :class="{active: isActive(item.path)}" :key=index>
         <router-link :to="item.path" class="tags-li-title">
           {{item.title}}
         </router-link>
@@ -41,8 +41,8 @@ export default {
       return path === this.$route.path
     },
     closeTags(index) {
-      const delItem = this.tagList.splice(index,1)[0]
-      const item = this.tagList[index] ? this.tagsList[index] : this.tagsList[index-1]
+      const delItem = this.tagsList.splice(index,1)[0]
+      const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index-1]
       if(item) {
         delItem.path === this.$route.fullPath && this.$router.push(item.path)
       }else{
@@ -50,7 +50,7 @@ export default {
       }
     },
     closeAll() {
-      this.tagList = []
+      this.tagsList = []
       this.$router.push('/')
     },
     closeOther(){
@@ -60,6 +60,7 @@ export default {
       this.tagsList = curItem
     },
     setTags(route){
+      // console.log(this.path)
       const isExist = this.tagsList.some(item => {
         return item.path === route.fullPath
       })
@@ -67,6 +68,7 @@ export default {
         if(this.tagsList.length >= 8){
           this.tagsList.shift()
         }
+        // console.log(route.matched)
         this.tagsList.push({
           title: route.meta.title,
           path: route.fullPath,
@@ -85,12 +87,12 @@ export default {
     }
   },
   watch: {
-    // $route(newValue){
-    //   this.setTags(newValue)
-    // }
+    $route(newValue){
+      this.setTags(newValue)
+    }
   },
   created() {
-    // this.setTags(this.$route)
+    this.setTags(this.$route)
     bus.$on('close_current_tags',() => {
         for(let i=0,len=this.tagsList.length;i<len;i++){
           const item = this.tagsList[i]
@@ -98,7 +100,7 @@ export default {
             if(i<len-1){
               this.$router.push(this.tagsList[i+1].path)
             }else if(i>0){
-              this.$router.push(this.tagList[i-1].path)
+              this.$router.push(this.tagsList[i-1].path)
             }else {
               this.$router.push('/')
             }
