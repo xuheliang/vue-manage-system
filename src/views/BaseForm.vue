@@ -10,7 +10,7 @@
     </div>
     <div class="container">
       <div class="form-box">
-        <el-form ref="form" :model="form" label="80px">
+        <el-form ref="form" :model="form" label-width="80px">
           <el-form-item label="表单名称">
             <el-input v-model="form.name"></el-input>
           </el-form-item>
@@ -43,7 +43,7 @@
             </el-col>
           </el-form-item>
           <el-form-item label="城市级联">
-            <el-cascader :option="options" v-model="form.options"></el-cascader>
+            <el-cascader :options="options" v-model="form.options"></el-cascader>
           </el-form-item>
           <el-form-item label="选择开关">
             <el-switch v-model="form.delivery"></el-switch>
@@ -55,14 +55,14 @@
               <el-checkbox label="imoo" name="type"></el-checkbox>
             </el-checkbox-group>
           </el-form-item>
+          <el-form-item label="文本框">
+            <el-input type="textarea" rows="5" v-model="form.desc"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="onSubmit">表单提交</el-button>
+            <el-button>取消</el-button>
+          </el-form-item>
         </el-form>
-        <el-form-item label="文本框">
-          <el-input type="textarea" rows="5" v-model="form.desc"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="onSubmit">表单提交</el-button>
-          <el-button>取消</el-button>
-        </el-form-item>
       </div>
     </div>
   </div>
@@ -137,8 +137,9 @@ export default {
       }
     }
   },
-  medthods: {
+  methods: {
     onSubmit() {
+      console.log(this.form)
       this.$message.success('提交成功!')
     }
   }

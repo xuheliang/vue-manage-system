@@ -113,7 +113,7 @@ export default {
         },
         {
           icon: 'el-icon-pie-chart',
-          index: 'cahrts',
+          index: 'charts',
           title: 'schart图表'
         },
         {
