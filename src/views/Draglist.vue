@@ -1,12 +1,14 @@
 <template>
   <section class="main">
     <div class="crumbs">
-      <el-breadcrumb-item>
-        <i class="el-icon-rank"></i>拖拽组件
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        拖拽排序
-      </el-breadcrumb-item>
+      <el-breadcrumb>
+        <el-breadcrumb-item>
+          <i class="el-icon-rank"></i>拖拽组件
+        </el-breadcrumb-item>
+        <el-breadcrumb-item>
+          拖拽排序
+        </el-breadcrumb-item>
+      </el-breadcrumb>
     </div>
     <div class="contianer">
       <div class="plugins-tips">
@@ -28,7 +30,7 @@
           <div class="item-title">
             doing
           </div>
-          <draggable v-model="doing" @remove="removeHandle" :opitons="dragOptions">
+          <draggable v-model="doing" @remove="removeHandle" :options="dragOptions">
             <transition-group tag="div" id="doing" class="item-ul">
               <div v-for="item in doing" class="drag-list" :key="item.id">
                 {{item.content}}
@@ -134,6 +136,7 @@ export default {
    background-color:#eff1f5;
    margin-right: 16px;
    border-radius: 6px;
+   border: 1px #e1e4e8 solid;
  }
  .item-title {
    padding: 8px 8px 8px 12px;
@@ -159,7 +162,7 @@ export default {
    border-radius: 6px;
    cursor: pointer;
    -webkit-transition: border .3s ease-in;
-   transition: border .3s ease-in
+   transition: border .1s ease-in
  }
  .drag-list:hover {
    border: 1px solid #20a0ff

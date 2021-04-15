@@ -68,7 +68,7 @@ export default {
         if(this.tagsList.length >= 8){
           this.tagsList.shift()
         }
-        // console.log(route.matched)
+       console.log(route.matched)
         this.tagsList.push({
           title: route.meta.title,
           path: route.fullPath,
@@ -129,7 +129,21 @@ export default {
 }
 .tags-li {
   float: left;
-  margin: 3px 5px 2px 3px
+  margin: 3px 5px 2px 3px;
+  border-radius: 3px;
+  font-size: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 23px;
+  line-height: 23px;
+  border: 1px solid #e9eaec;
+  background: #fff;
+  padding: 0 5px 0 12px;
+  vertical-align: middle;
+  color: #666;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  transition: all .3s ease-in;
 }
 .tags-li:not(.active):hover {
   background: #f8f8f8;

@@ -1,9 +1,11 @@
 <template>
   <section class="main">
     <div class="crumbs">
-      <el-breadcrumb-item>
-        <i class="el-icon-rank"></i>拖拽组件
-      </el-breadcrumb-item>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item>
+          <i class="el-icon-rank"></i>拖拽组件
+        </el-breadcrumb-item>
+      </el-breadcrumb>
     </div>
     <div class="container">
       <p>

@@ -9,7 +9,7 @@
     </div>
     <div class="container">
       <span>{{$t('i18n.tips')}}</span>
-      <el-button type="primary" @click="$18n.locale = $18n.locale === 'zh'?'en':'zh'">{{$t('i18n.btn')}}</el-button>
+      <el-button type="primary" @click="$i18n.locale = $i18n.locale === 'zh'?'en':'zh'">{{$t('i18n.btn')}}</el-button>
       <div class="list">
         <h2>{{$t('i18n.title1')}}</h2>
         <p>{{$t('i18n.p1')}}</p>
@@ -22,7 +22,6 @@
           </i18n>
         </div>
       </div>
-
     </div>
   </section>
 </template>

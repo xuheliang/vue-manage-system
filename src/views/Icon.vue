@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="crumbs">
-      <el-breadcrumb-item separator='/'>
-        <i class="el-icon-lx-emoji"></i>自定义图标
-      </el-breadcrumb-item>
+      <el-breadcrumb separator='/'>
+        <el-breadcrumb-item>
+          <i class="el-icon-lx-emoji"></i>自定义图标
+        </el-breadcrumb-item>
+      </el-breadcrumb>
     </div>
     <div class="container">
       <h2>使用方法</h2>
-      <p style="lin-height: 50px;">
+      <p style="line-height: 50px;">
         直接通过设置类名为 el-icon-lx-iconName 来使用即可。例如：（共{{iconList.length}}个图标）
       </p>
       <p class="example-p"> 
@@ -198,6 +200,12 @@ export default {
 }
 ul,li{
   list-style: none;
+}
+.icon-li {
+  display: inline-block;
+  padding: 10px;
+  width: 120px;
+  height: 120px;
 }
 .icon-li-content{
   display: flex;

@@ -55,6 +55,13 @@
               <el-checkbox label="imoo" name="type"></el-checkbox>
             </el-checkbox-group>
           </el-form-item>
+          <el-form-item>
+            <el-radio-group v-model="form.resource">
+              <el-radio label="步步高"></el-radio>
+              <el-radio label="小天才"></el-radio>
+              <el-radio label="imoo"></el-radio>
+            </el-radio-group>
+          </el-form-item>
           <el-form-item label="文本框">
             <el-input type="textarea" rows="5" v-model="form.desc"></el-input>
           </el-form-item>
@@ -132,6 +139,7 @@ export default {
         date2: '',
         delivery: true,
         type: ['步步高'],
+        resource: '小天才',
         desc: '',
         options: []
       }

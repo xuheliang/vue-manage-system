@@ -139,7 +139,7 @@ export default {
   height: 400px;
 }
 .content-title {
-  clear: both;
+  /* clear: both; */
   font-weight: 400;
   line-height: 50px;
   margin: 10px 0;

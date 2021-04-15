@@ -4,8 +4,8 @@
 }
 
 html,
-#app,
 body,
+#app,
 .wrapper {
   width: 100%;
   height: 100%;
@@ -13,13 +13,13 @@ body,
 }
 
 body {
-  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'microsoft yahei',
-    arial, STHeiTi, sans-serif;
+  font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none
 }
+
 
 .content-box {
   position: absolute;
@@ -28,8 +28,8 @@ a {
   top: 70px;
   bottom: 0;
   padding-bottom: 30px;
-  -webkit-transition: left 0.3s ease-in-out;
-  transition: left 0.3s ease-in-out;
+  -webkit-transition: left .3s ease-in-out;
+  transition: left .3s ease-in-out;
   background: #f0f0f0;
 }
 
@@ -70,7 +70,7 @@ a {
   margin-bottom: 20px;
 }
 
-.el-button + .el-tooltip {
+.el-button+.el-tooltip {
   margin-left: 10px;
 }
 
@@ -84,7 +84,7 @@ a {
 
 .move-enter-active,
 .move-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity .5s;
 }
 
 .move-enter,
@@ -93,6 +93,7 @@ a {
 }
 
 /*BaseForm*/
+
 .form-box {
   width: 600px;
 }
@@ -105,8 +106,8 @@ a {
 .el-time-panel__content::before {
   margin-top: -7px;
 }
-.el-time-spinner__wrapper
-  .el-scrollbar__wrap:not(.el-scrollbar__wrap--hidden-default) {
+
+.el-time-spinner__wrapper .el-scrollbar__wrap:not(.el-scrollbar__wrap--hidden-default) {
   padding-bottom: 0;
 }
 
@@ -118,7 +119,7 @@ a {
   line-height: 40px;
   text-align: center;
   color: #fff;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 .g-core-image-corp-container .info-aside {
@@ -126,7 +127,7 @@ a {
 }
 
 .el-upload--text {
-  background: #fff;
+  background-color: #fff;
   border: 1px dashed #d9d9d9;
   border-radius: 6px;
   box-sizing: border-box;
@@ -134,12 +135,15 @@ a {
   height: 180px;
   text-align: center;
   cursor: pointer;
+  position: relative;
   overflow: hidden;
 }
 
 .el-upload--text .el-icon-upload {
   font-size: 67px;
   color: #97a8be;
+  margin: 40px 0 16px;
+  line-height: 50px;
 }
 
 .el-upload--text {
@@ -153,7 +157,8 @@ a {
 }
 
 /*VueEditor*/
-.ql-contianer {
+
+.ql-container {
   min-height: 400px;
 }
 
@@ -165,7 +170,8 @@ a {
   margin-top: 20px;
 }
 
-/* markdown */
-.v-note-wrapper .v-note-pannel {
+/*markdown*/
+
+.v-note-wrapper .v-note-panel {
   min-height: 500px;
 }

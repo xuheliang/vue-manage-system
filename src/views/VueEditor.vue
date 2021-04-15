@@ -12,11 +12,11 @@
     </div>
 
     <div class="container">
-      <div class="plugins-tip">
+      <div class="plugins-tips">
         Vue-Quill-Editor：基于Quill、适用于Vue2的富文本编辑器。
         访问地址：<a href="https://github.com/surmon-china/vue-quill-editor" target="_blank">vue-quill-editor</a>
       </div>
-      <quill-editor ref="myTextEditor" v-model="content" :options="editorOption"></quill-editor>
+      <quill-editor ref="myTextEditor" v-model="content" :options="editorOption" @change="onEditorChange($event)"></quill-editor>
       <el-button class="editor-btn" type="primary" @click="submit">提交</el-button>
     </div>
   </div>
@@ -32,6 +32,8 @@ export default {
   data() {
     return {
       content: '',
+      content1: '',
+      content2: '',
       editorOption: {
         placeholder: 'Hello World'
       }
@@ -42,10 +44,10 @@ export default {
   },
   methods: {
     onEditorChange({editor,html,text}) {
-      this.content = html
+      this.content1 = html
+      this.content2 = text
     },
     submit(){
-      console.log(this.content)
       this.$message.success('提交成功')
     } 
   }
@@ -55,5 +57,8 @@ export default {
 <style scoped>
 .editor-btn{
   margin-top: 20px
+}
+.plugins-tips {
+  background: #eef1f6;
 }
 </style>

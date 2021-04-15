@@ -70,7 +70,7 @@ const routes = [
       },
       {
         path: '/i18n',
-        componet: () => import('@/views/I18n'),
+        component: () => import('@/views/I18n'),
         meta: {title: '国际化'}
       },
       {
@@ -91,7 +91,7 @@ const routes = [
     ]
   },
   {
-    path: 'login',
+    path: '/login',
     component: () => import('@/views/login'),
     meta: {title: '登陆'}
   },
